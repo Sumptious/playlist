@@ -2,6 +2,7 @@ var express = require ('express');
 var fs = require ('fs');
 var jade = require('pug');
 var path = require ('path');
+var PORT = process.env.PORT || 4000;
 
 var app = express();
 app.use('/public', express.static(__dirname + '/public'));
@@ -45,5 +46,5 @@ app.get('/download', function(req, res) {
 	});
 });
 app.listen(4000, function () {
-    console.log('App listening on port 4000')
+    console.log('App listening on port'+' '+ PORT)
 })
